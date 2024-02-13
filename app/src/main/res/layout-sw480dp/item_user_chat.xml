@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/_12sdp"
     android:layout_marginVertical="@dimen/_8sdp"
+    android:layout_marginStart="@dimen/_12sdp"
     android:background="#eee">
 
     <ImageView
@@ -22,8 +22,8 @@
 
     <TextView
         style="@style/chat_text"
-        android:textColor="@color/white"
         android:background="@drawable/user_chat_background"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.915" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
