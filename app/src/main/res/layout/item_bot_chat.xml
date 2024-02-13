@@ -6,14 +6,14 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/_4sdp"
     android:layout_marginVertical="@dimen/_8sdp"
-    android:background="#eee">
+    android:background="@color/shade_white">
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/user_img_background"
+        android:background="@drawable/bot_img_background"
         android:elevation="2dp"
-        android:src="@drawable/user_icon"
+        android:src="@drawable/chathub_logo__2_"
         app:layout_constraintBottom_toTopOf="@+id/hguideline1"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/vguideline2"
@@ -22,34 +22,28 @@
 
     <TextView
         style="@style/chat_text"
-        android:textColor="@color/white"
-        android:background="@drawable/user_chat_background"
+        android:background="@drawable/bot_chat_background"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/vguideline3"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vguideline2"
         app:layout_constraintTop_toTopOf="@+id/hguideline2"
         tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vguideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.915" />
+        app:layout_constraintGuide_percent="0.005" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vguideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9949495" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vguideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.91" />
+        app:layout_constraintGuide_percent="0.085" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hguideline1"
@@ -64,5 +58,4 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.14" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
