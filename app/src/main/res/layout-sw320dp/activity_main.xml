@@ -7,6 +7,83 @@
     android:background="@color/shade_white"
     tools:context=".UI.MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/shade_white"
+        app:layout_constraintBottom_toTopOf="@+id/hguideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="center"
+            android:text="ChatHub"
+            android:textColor="@color/tint_black"
+            android:textSize="@dimen/_24sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline33"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/menu_icon_background"
+            android:src="@drawable/menu_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline32"
+            app:layout_constraintStart_toStartOf="@+id/vguideline31"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/menu_icon_background"
+            android:scaleType="centerInside"
+            android:src="@drawable/new_chat_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline34"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.74" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.87" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.16" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_recyclerView"
         android:layout_width="0dp"
@@ -16,7 +93,7 @@
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         tools:listitem="@layout/item_user_chat" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +105,7 @@
         app:layout_constraintBottom_toTopOf="@+id/hguideline4"
         app:layout_constraintEnd_toStartOf="@+id/vguideline5"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_max="100dp"
+        app:layout_constraintHeight_max="@dimen/_100sdp"
         app:layout_constraintStart_toStartOf="@+id/vguideline1">
 
         <EditText
@@ -38,12 +115,12 @@
             android:background="@drawable/chat_text_background"
             android:fontFamily="@font/nunito_medium"
             android:hint="Chat with me :)"
-            android:paddingStart="@dimen/_8sdp"
+            android:paddingStart="@dimen/_11sdp"
             android:textColor="@color/black"
             android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/vguideline23"
-            app:layout_constraintHeight_max="100dp"
+            app:layout_constraintHeight_max="@dimen/_100sdp"
             app:layout_constraintStart_toStartOf="@+id/vguideline25"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Hello" />
@@ -71,7 +148,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/vguideline6"
-            app:layout_constraintStart_toEndOf="@+id/mic_btn"
+            app:layout_constraintStart_toStartOf="@+id/vguideline21"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -118,6 +195,13 @@
         app:layout_constraintGuide_percent="0.04" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vguideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vguideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,7 +235,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hguideline3"
