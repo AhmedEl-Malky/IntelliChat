@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="tint_black">#111</color>
     <color name="shade_white">#eee</color>
+    <color name="default_color">#fef7ff</color>
 </resources>
