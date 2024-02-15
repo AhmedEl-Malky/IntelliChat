@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/_4sdp"
     android:layout_marginVertical="@dimen/_8sdp"
-    android:background="#eee">
+    >
 
     <ImageView
         android:layout_width="0dp"
