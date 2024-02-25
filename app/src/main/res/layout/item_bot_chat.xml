@@ -1,62 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginHorizontal="@dimen/_4sdp"
-    android:layout_marginVertical="@dimen/_8sdp"
-    android:background="@color/shade_white"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/bot_img_background"
-        android:elevation="2dp"
-        android:src="@drawable/chathub_logo"
-        app:layout_constraintBottom_toTopOf="@+id/hguideline1"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/vguideline2"
-        app:layout_constraintStart_toStartOf="@+id/vguideline1"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        style="@style/chat_text"
-        android:background="@drawable/bot_chat_background"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/vguideline2"
-        app:layout_constraintTop_toTopOf="@+id/hguideline2"
-        tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
+        <variable
+            name="vm"
+            type="com.elmalky.chathub.MainViewModel" />
+    </data>
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vguideline1"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.005" />
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@color/shade_white">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vguideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.085" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bot_img_background"
+            android:elevation="2dp"
+            android:src="@drawable/chathub_logo"
+            app:layout_constraintBottom_toTopOf="@+id/hguideline1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline2"
+            app:layout_constraintStart_toStartOf="@+id/vguideline1"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/hguideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.19" />
+        <TextView
+            style="@style/chat_text"
+            android:background="@drawable/bot_chat_background"
+            android:text="@{vm.botChat}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vguideline2"
+            app:layout_constraintTop_toTopOf="@+id/hguideline2"
+            tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/hguideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.14" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.005" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.085" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hguideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.19" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hguideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
