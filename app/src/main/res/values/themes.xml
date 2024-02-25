@@ -8,6 +8,10 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="splash_screen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
     <style name="Theme.ChatHub" parent="Base.Theme.ChatHub" />
 
     <style name="chat_text">
