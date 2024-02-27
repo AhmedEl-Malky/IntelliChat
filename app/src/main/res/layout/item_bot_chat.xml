@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="botText"
+            type="String" />
+
+        <variable
             name="vm"
             type="com.elmalky.chathub.MainViewModel" />
     </data>
@@ -13,7 +17,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_4sdp"
         android:layout_marginVertical="@dimen/_8sdp"
         android:background="@color/shade_white">
 
@@ -30,15 +33,28 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/bot_txt"
             style="@style/chat_text"
             android:background="@drawable/bot_chat_background"
-            android:text="@{vm.botChat}"
+            textAnimation="@{botText}"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/vguideline2"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline3"
+            app:layout_constraintStart_toStartOf="@+id/vguideline4"
             app:layout_constraintTop_toTopOf="@+id/hguideline2"
-            tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
+            tools:text="" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            stateLoading="@{vm.botChat}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/bot_txt"
+            app:layout_constraintEnd_toEndOf="@id/bot_txt"
+            app:layout_constraintStart_toStartOf="@id/bot_txt"
+            app:layout_constraintTop_toTopOf="@id/bot_txt"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_animation"
+            app:lottie_speed="1.75" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -53,20 +69,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.085" />
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/hguideline1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.19" />
+            app:layout_constraintGuide_begin="38dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/hguideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.14" />
+            app:layout_constraintGuide_begin="40dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
