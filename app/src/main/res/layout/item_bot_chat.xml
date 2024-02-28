@@ -9,9 +9,6 @@
             name="botText"
             type="String" />
 
-        <variable
-            name="vm"
-            type="com.elmalky.chathub.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

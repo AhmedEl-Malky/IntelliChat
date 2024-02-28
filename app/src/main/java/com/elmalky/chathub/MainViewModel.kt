@@ -21,13 +21,18 @@ class MainViewModel : ViewModel() {
         botChat.postValue(botText)
     }
 
+    fun startNewChat() {
+        geminiRepository.clearItems()
+        items.postValue(geminiRepository._chatItems)
+    }
+
     fun addChatItemsToItemsList(userText: String?) {
         if (userText != null) {
             botText = "       "
             geminiRepository.addChatItem(userText)
-            items.postValue(geminiRepository.chatItems)
+            items.postValue(geminiRepository._chatItems)
             geminiRepository.addChatItem(botText)
-            items.postValue(geminiRepository.chatItems)
+            items.postValue(geminiRepository._chatItems)
             botChat.postValue("       ")
             userChat.postValue(null)
             viewModelScope.launch(Dispatchers.IO) {
@@ -37,9 +42,7 @@ class MainViewModel : ViewModel() {
                 job.join()
                 Log.i("Tag", botText)
                 geminiRepository.modifyBotChat(botText)
-                items.postValue(geminiRepository.chatItems)
-//                botChat.postValue(" ")
-//                Log.i("Tag",botText)
+                items.postValue(geminiRepository._chatItems)
             }
 
         }

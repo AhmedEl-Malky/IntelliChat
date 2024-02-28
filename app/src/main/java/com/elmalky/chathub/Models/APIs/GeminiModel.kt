@@ -10,7 +10,6 @@ class GeminiModel {
         temperature = 0f
         topK = 2
         topP = 0.5f
-        maxOutputTokens = 800
     }
     val generativeModel = GenerativeModel(
         modelName = "gemini-pro",

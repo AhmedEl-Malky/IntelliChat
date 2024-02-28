@@ -55,6 +55,7 @@
             <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:onClick="@{() -> vm.startNewChat()}"
                 android:background="@drawable/menu_icon_background"
                 android:scaleType="centerInside"
                 android:src="@drawable/new_chat_icon"
