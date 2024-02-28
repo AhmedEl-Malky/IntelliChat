@@ -7,13 +7,16 @@ import com.google.ai.client.generativeai.type.generationConfig
 class GeminiModel {
     val apiKey = "AIzaSyDfN2VzWfEczohYmAFfOraEig1QOg-q7Xg"
     val config = generationConfig {
-        temperature = 0.5f
+        temperature = 0f
         topK = 2
+        topP = 0.5f
+        maxOutputTokens = 800
     }
     val generativeModel = GenerativeModel(
         modelName = "gemini-pro",
         apiKey = apiKey,
         config
+
     )
 
     suspend fun makeRequest(prompt: String): String {

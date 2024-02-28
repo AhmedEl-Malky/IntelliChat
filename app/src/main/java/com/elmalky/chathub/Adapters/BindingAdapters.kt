@@ -37,7 +37,7 @@ fun animateText(view: View, text: String) {
         Handler().postDelayed({
             i++
             animateText(view, text)
-        }, 15)
+        }, 10)
     }
 }
 
@@ -46,7 +46,7 @@ fun showLoadingAnimation(view: View, text: String?) {
     view as LottieAnimationView
     if (text != null) {
         Log.i("Tag", text)
-        if (text == " ") {
+        if (text == "       ") {
             view.visibility = View.VISIBLE
             view.playAnimation()
         } else {

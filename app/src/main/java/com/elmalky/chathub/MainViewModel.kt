@@ -13,7 +13,7 @@ class MainViewModel : ViewModel() {
     val userChat = MutableLiveData<String>()
     val botChat = MutableLiveData<String>(" ")
     val items = MutableLiveData<MutableList<String>>()
-    var botText = ""
+    var botText = "       "
 
     //    Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language
     suspend fun getResponse(prompt: String) {
@@ -23,11 +23,12 @@ class MainViewModel : ViewModel() {
 
     fun addChatItemsToItemsList(userText: String?) {
         if (userText != null) {
+            botText = "       "
             geminiRepository.addChatItem(userText)
             items.postValue(geminiRepository.chatItems)
-            geminiRepository.addChatItem(" ")
+            geminiRepository.addChatItem(botText)
             items.postValue(geminiRepository.chatItems)
-            botChat.postValue(" ")
+            botChat.postValue("       ")
             userChat.postValue(null)
             viewModelScope.launch(Dispatchers.IO) {
                 val job = launch {
