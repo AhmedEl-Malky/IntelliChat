@@ -1,7 +1,6 @@
 package com.elmalky.chathub.UI
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -18,11 +17,11 @@ class MainActivity : AppCompatActivity() {
         binder = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binder.vm = viewModel
         binder.lifecycleOwner = this
-        val adapter = ChatRecyclerView(mutableListOf())
+        val adapter = ChatRecyclerView(mutableListOf(), viewModel)
         binder.chatRecyclerView.adapter = adapter
-        viewModel.botChat.observe(this) {
-            Log.i("Tag", it)
-        }
+//        viewModel.botChat.observe(this) {
+//            Log.i("Tag", it)
+//        }
 //        viewModel.items.observe(this){
 //            Log.i("Tag",it.toString())
 //        }

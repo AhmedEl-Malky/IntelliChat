@@ -4,27 +4,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.elmalky.chathub.MainViewModel
 import com.elmalky.chathub.R
 import com.elmalky.chathub.databinding.ItemBotChatBinding
 import com.elmalky.chathub.databinding.ItemUserChatBinding
 
-class ChatRecyclerView(var chatItems: MutableList<String>) :
+class ChatRecyclerView(var chatItems: MutableList<String>, val viewModel: MainViewModel) :
     RecyclerView.Adapter<ChatRecyclerView.BaseViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
-        when (viewType) {
+        return when (viewType) {
             BOT_CHAT_ITEM -> {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_bot_chat, parent, false)
-                return BotChatHolder(view)
+                BotChatHolder(view)
             }
 
             USER_CHAT_ITEM -> {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_user_chat, parent, false)
-                return UserChatHolder(view)
+                UserChatHolder(view)
             }
 
-            else -> return super.createViewHolder(parent, viewType)
+            else -> super.createViewHolder(parent, viewType)
         }
     }
 
@@ -38,7 +39,10 @@ class ChatRecyclerView(var chatItems: MutableList<String>) :
         val currentText = chatItems[position]
         when (holder) {
             is UserChatHolder -> holder.userChatBinder.userText = currentText
-            is BotChatHolder -> holder.botChatBinder.botText = currentText
+            is BotChatHolder -> {
+                holder.botChatBinder.botText = currentText
+                holder.botChatBinder.vm = viewModel
+            }
         }
     }
 

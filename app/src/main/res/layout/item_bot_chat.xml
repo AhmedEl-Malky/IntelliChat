@@ -35,26 +35,24 @@
         <TextView
             android:id="@+id/bot_txt"
             style="@style/chat_text"
-            android:background="@drawable/bot_chat_background"
             textAnimation="@{botText}"
+            android:background="@drawable/bot_chat_background"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/vguideline3"
             app:layout_constraintStart_toStartOf="@+id/vguideline4"
             app:layout_constraintTop_toTopOf="@+id/hguideline2"
             tools:text="" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            stateLoading="@{vm.botChat}"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@id/bot_txt"
-            app:layout_constraintEnd_toEndOf="@id/bot_txt"
-            app:layout_constraintStart_toStartOf="@id/bot_txt"
-            app:layout_constraintTop_toTopOf="@id/bot_txt"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading_animation"
-            app:lottie_speed="1.75" />
+        <!--        <com.airbnb.lottie.LottieAnimationView-->
+        <!--            stateLoading="@{vm.botChat}"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/bot_txt"-->
+        <!--            app:layout_constraintEnd_toEndOf="@id/bot_txt"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/bot_txt"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/bot_txt"-->
+        <!--            app:lottie_loop="true"-->
+        <!--            app:lottie_rawRes="@raw/loading_animation"-->
+        <!--            app:lottie_speed="1.75" />-->
 
 
         <androidx.constraintlayout.widget.Guideline

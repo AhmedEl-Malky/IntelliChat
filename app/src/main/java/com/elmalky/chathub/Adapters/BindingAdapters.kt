@@ -2,11 +2,13 @@ package com.elmalky.chathub.Adapters
 
 import android.content.Context
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 
 @BindingAdapter(value = ["recyclerItems"])
 fun setRecyclerItems(view: RecyclerView, items: MutableList<String>?) {
@@ -35,16 +37,21 @@ fun animateText(view: View, text: String) {
         Handler().postDelayed({
             i++
             animateText(view, text)
-        }, 20)
+        }, 15)
     }
 }
 
 @BindingAdapter(value = ["stateLoading"])
 fun showLoadingAnimation(view: View, text: String?) {
+    view as LottieAnimationView
     if (text != null) {
-        if (text == " ")
+        Log.i("Tag", text)
+        if (text == " ") {
             view.visibility = View.VISIBLE
-        else
+            view.playAnimation()
+        } else {
             view.visibility = View.INVISIBLE
+            view.pauseAnimation()
+        }
     }
 }

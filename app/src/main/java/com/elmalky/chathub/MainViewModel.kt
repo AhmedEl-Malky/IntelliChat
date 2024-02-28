@@ -1,5 +1,6 @@
 package com.elmalky.chathub
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -33,7 +34,7 @@ class MainViewModel : ViewModel() {
                     getResponse(userText)
                 }
                 job.join()
-                botChat.postValue(" ")
+                Log.i("Tag", botText)
                 geminiRepository.modifyBotChat(botText)
                 items.postValue(geminiRepository.chatItems)
 //                botChat.postValue(" ")
