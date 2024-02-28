@@ -3,14 +3,21 @@ package com.elmalky.chathub.Models.Repositories
 import com.elmalky.chathub.Models.APIs.GeminiModel
 
 class GeminiRepository {
-    val model = GeminiModel()
-    val chatItems = mutableListOf<String>()
+    private val model = GeminiModel()
+    val _chatItems = mutableListOf<String>()
+    val chatItems
+        get() = _chatItems.toList()
+
     suspend fun makeRequest(prompt: String) = model.makeRequest(prompt)
     fun addChatItem(item: String) {
-        chatItems.add(item)
+        _chatItems.add(item)
+    }
+
+    fun clearItems() {
+        _chatItems.clear()
     }
 
     fun modifyBotChat(text: String) {
-        chatItems[chatItems.size - 1] = text
+        _chatItems[_chatItems.size - 1] = text
     }
 }

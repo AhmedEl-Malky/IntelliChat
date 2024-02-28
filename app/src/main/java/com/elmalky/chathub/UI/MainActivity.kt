@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         binder.lifecycleOwner = this
         val adapter = ChatRecyclerView(mutableListOf(), viewModel)
         binder.chatRecyclerView.adapter = adapter
+        binder.menuBtn.setOnClickListener {
+            binder.drawerLayout.openDrawer(binder.navigationDrawer)
+        }
 //        viewModel.botChat.observe(this) {
 //            Log.i("Tag", it)
 //        }
@@ -27,4 +30,8 @@ class MainActivity : AppCompatActivity() {
 //        }
 
     }
+
+//    private fun setUpDrawer() {
+//        binder.drawerLayout.addDrawerListener()
+//    }
 }
