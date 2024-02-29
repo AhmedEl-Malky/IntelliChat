@@ -35,7 +35,7 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/vguideline3"
             app:layout_constraintTop_toTopOf="@+id/hguideline2"
-            app:layout_constraintWidth_max="@dimen/_299sdp"
+            app:layout_constraintWidth_max="@dimen/_282sdp"
             tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
 
         <androidx.constraintlayout.widget.Guideline

@@ -18,6 +18,7 @@
         android:background="@color/shade_white">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/bot_img_background"
@@ -30,6 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            app:layout_constraintWidth_max="@dimen/_298sdp"
             android:id="@+id/bot_txt"
             style="@style/chat_text"
             textAnimation="@{botText}"
@@ -38,10 +40,22 @@
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/vguideline4"
             app:layout_constraintTop_toTopOf="@+id/hguideline2"
-            tools:text="@{botText}" />
+            tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/mic_icon_background"
+            android:onClick="speakOut"
+            android:src="@drawable/play_icon"
+            app:layout_constraintBottom_toTopOf="@+id/hguideline1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/bot_txt"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.airbnb.lottie.LottieAnimationView
             stateLoading="@{botText}"
+            android:visibility="invisible"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="@id/bot_txt"
@@ -86,13 +100,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="38dp" />
+            app:layout_constraintGuide_begin="@dimen/_29sdp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/hguideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="40dp" />
+            app:layout_constraintGuide_begin="@dimen/_31sdp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
