@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            app:layout_constraintWidth_max="@dimen/_298sdp"
+            app:layout_constraintWidth_max="@dimen/_282sdp"
             android:id="@+id/bot_txt"
             style="@style/chat_text"
             textAnimation="@{botText}"
