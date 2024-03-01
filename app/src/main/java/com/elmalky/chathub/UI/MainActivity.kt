@@ -2,6 +2,8 @@ package com.elmalky.chathub.UI
 
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.speech.tts.Voice
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -27,13 +29,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         binder.menuBtn.setOnClickListener {
             binder.drawerLayout.openDrawer(binder.navigationDrawer)
         }
-//        viewModel.botChat.observe(this) {
-//            Log.i("Tag", it)
-//        }
-//        viewModel.items.observe(this){
-//            Log.i("Tag",it.toString())
-//        }
-
     }
 
     override fun onInit(status: Int) {
@@ -42,12 +37,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     fun speakOut(view: View) {
-//        for (voice:Voice in tts.voices){
-//                if(voice.name == "en-gb-x-rjs#male_2-local") {
-//                    tts.voice = voice
-//                    break
-//                }
-//        }
+        var i = 0
+        for (voice: Voice in tts.voices) {
+            if (voice.name == "en-us-x-sfg-network") {
+                Log.i("Voicettttt", i.toString())
+                tts.voice = voice
+                break
+            }
+            i++
+        }
         viewModel.botChat.observe(this) {
             tts.speak(it, TextToSpeech.QUEUE_FLUSH, null)
         }
