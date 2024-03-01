@@ -55,3 +55,14 @@ fun showLoadingAnimation(view: View, text: String?) {
         }
     }
 }
+
+@BindingAdapter(value = ["stateSpeaker"])
+fun showSpeaker(view: View, text: String?) {
+    if (text != null) {
+        if (text != "       ") {
+            view.visibility = View.VISIBLE
+        } else {
+            view.visibility = View.INVISIBLE
+        }
+    }
+}

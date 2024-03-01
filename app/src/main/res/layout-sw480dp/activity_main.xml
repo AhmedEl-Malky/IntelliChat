@@ -32,26 +32,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <!--                <TextView-->
-                <!--                    android:id="@+id/textView"-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="0dp"-->
-                <!--                    android:fontFamily="@font/nunito_bold"-->
-                <!--                    android:gravity="center"-->
-                <!--                    android:text="ChatHub"-->
-                <!--                    android:textColor="@color/tint_black"-->
-                <!--                    android:textSize="@dimen/_24sdp"-->
-                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--                    app:layout_constraintEnd_toStartOf="@+id/vguideline33"-->
-                <!--                    app:layout_constraintStart_toEndOf="@+id/menu_btn"-->
-                <!--                    app:layout_constraintTop_toTopOf="parent" />-->
                 <ImageView
                     android:id="@+id/imageView2"
                     style="@style/logo"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline2"
-                    app:layout_constraintEnd_toStartOf="@+id/vguideline33"
+                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
                     app:layout_constraintStart_toStartOf="@+id/vguideline32"
                     app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
@@ -311,7 +298,7 @@
             android:layout_gravity="start"
             android:background="@color/shade_white"
             android:fitsSystemWindows="true"
-            android:padding="@dimen/_18sdp"
+            android:padding="@dimen/_16sdp"
             app:menu="@menu/nav_drawer_menu" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

@@ -41,6 +41,7 @@ class ChatRecyclerView(var chatItems: MutableList<String>, val viewModel: MainVi
             is UserChatHolder -> holder.userChatBinder.userText = currentText
             is BotChatHolder -> {
                 holder.botChatBinder.botText = currentText
+                holder.botChatBinder.vm = viewModel
             }
         }
     }
