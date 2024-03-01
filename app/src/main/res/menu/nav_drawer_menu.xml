@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/start_new_chat"
+        android:icon="@drawable/new_chat_icon"
+        android:title="New Chat" />
+    <item android:title="TTS Voice">
+        <menu>
+            <item
+                android:id="@+id/Garvis_voice"
+                android:icon="@drawable/male_icon"
+                android:title="Garvis (Male Voice)" />
+
+            <item
+                android:id="@+id/Skye_voice"
+                android:icon="@drawable/female_icon"
+                android:title="Skye    (Female Voice)" />
+        </menu>
+    </item>
+    <item android:title="Themes">
+        <menu>
+            <item
+                android:id="@+id/dark_mode"
+                android:icon="@drawable/dark_mode_icon"
+                android:title="Dark Mode" />
+            <item
+                android:id="@+id/light_mode"
+                android:icon="@drawable/light_mode_icon"
+                android:title="Light Mode" />
+        </menu>
+    </item>
+</menu>

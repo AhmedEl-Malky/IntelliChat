@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userText"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@color/shade_white">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/user_img_background"
+            android:elevation="2dp"
+            android:src="@drawable/user_icon"
+            app:layout_constraintBottom_toTopOf="@+id/hguideline1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline2"
+            app:layout_constraintStart_toStartOf="@+id/vguideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/chat_text"
+            android:background="@drawable/user_chat_background"
+            android:text="@{userText}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline3"
+            app:layout_constraintTop_toTopOf="@+id/hguideline2"
+            app:layout_constraintWidth_max="@dimen/_282sdp"
+            tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.915" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.995" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hguideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_29sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hguideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_31sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="botText"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.elmalky.chathub.MainViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@color/shade_white">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bot_img_background"
+            android:elevation="2dp"
+            android:src="@drawable/chathub_logo"
+            app:layout_constraintBottom_toTopOf="@+id/hguideline1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/vguideline2"
+            app:layout_constraintStart_toStartOf="@+id/vguideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            app:layout_constraintWidth_max="@dimen/_282sdp"
+            android:id="@+id/bot_txt"
+            style="@style/chat_text"
+            textAnimation="@{botText}"
+            android:text="@{botText}"
+            android:background="@drawable/bot_chat_background"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/vguideline4"
+            app:layout_constraintTop_toTopOf="@+id/hguideline2"
+            tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
+
+        <ImageButton
+            stateSpeaker="@{vm.botChat}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/mic_icon_background"
+            android:onClick="speakOut"
+            android:src="@drawable/speaker_icon"
+            android:tag="@{vm.botChat}"
+            app:layout_constraintBottom_toTopOf="@+id/hguideline1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/bot_txt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            stateLoading="@{botText}"
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/bot_txt"
+            app:layout_constraintEnd_toEndOf="@id/bot_txt"
+            app:layout_constraintStart_toStartOf="@id/bot_txt"
+            app:layout_constraintTop_toTopOf="@id/bot_txt"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_animation"
+            app:lottie_speed="1.75" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.005" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.09" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vguideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hguideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_29sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/hguideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_31sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
