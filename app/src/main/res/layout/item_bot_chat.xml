@@ -9,6 +9,10 @@
             name="botText"
             type="String" />
 
+        <variable
+            name="vm"
+            type="com.elmalky.chathub.MainViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,11 +47,13 @@
             tools:text="Hello , chathub i need help , can you help me as i need from you to write a code about how to access item at specific index in map in kotlin language" />
 
         <ImageButton
+            stateSpeaker="@{vm.botChat}"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/mic_icon_background"
             android:onClick="speakOut"
-            android:src="@drawable/play_icon"
+            android:src="@drawable/speaker_icon"
+            android:tag="@{vm.botChat}"
             app:layout_constraintBottom_toTopOf="@+id/hguideline1"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/bot_txt"
