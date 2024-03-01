@@ -1,11 +1,11 @@
 package com.elmalky.chathub.Models.APIs
 
+import com.elmalky.chathub.Util.Constants
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.generationConfig
 
 
 class GeminiModel {
-    val apiKey = "AIzaSyDfN2VzWfEczohYmAFfOraEig1QOg-q7Xg"
     val config = generationConfig {
         temperature = 0f
         topK = 2
@@ -13,7 +13,7 @@ class GeminiModel {
     }
     val generativeModel = GenerativeModel(
         modelName = "gemini-pro",
-        apiKey = apiKey,
+        apiKey = Constants.Names.API_KEY,
         config
 
     )
