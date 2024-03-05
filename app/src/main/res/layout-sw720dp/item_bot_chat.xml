@@ -53,7 +53,7 @@
             android:background="@drawable/mic_icon_background"
             android:onClick="speakOut"
             android:src="@drawable/speaker_icon"
-            android:tag="@{vm.botChat}"
+            android:tag="@{botText}"
             app:layout_constraintBottom_toTopOf="@+id/hguideline1"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/bot_txt"

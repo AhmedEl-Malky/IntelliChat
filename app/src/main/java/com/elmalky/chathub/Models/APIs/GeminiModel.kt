@@ -1,6 +1,6 @@
 package com.elmalky.chathub.Models.APIs
 
-import com.elmalky.chathub.Util.Constants
+import com.elmalky.chathub.BuildConfig
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.generationConfig
 
@@ -13,7 +13,7 @@ class GeminiModel {
     }
     val generativeModel = GenerativeModel(
         modelName = "gemini-pro",
-        apiKey = Constants.Names.API_KEY,
+        apiKey = BuildConfig.apiKey,
         config
 
     )
